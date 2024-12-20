@@ -34,11 +34,17 @@ export class DemoComponent implements OnChanges {
 
   ngDoCheck() {
     console.log("ngDoCheck called")
+    console.log("Inside ngDoCheck: ", this.paraContent)
   }
 
   ngAfterContentInit() {
     console.log("ngAfterContentInit called")
-    console.log(this.paraContent)
+    console.log("Inside ngAfterContentInit: ", this.paraContent.nativeElement)
+  }
+
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked called")
+    console.log("Inside ngAfterContentChecked :", this.paraContent.nativeElement)
   }
 
 
