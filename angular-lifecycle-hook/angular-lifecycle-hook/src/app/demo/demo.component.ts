@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
@@ -13,6 +13,8 @@ export class DemoComponent implements OnChanges {
 
   @Input() message: string = ''
 
+  @ViewChild('temp') tempPara = '';
+
   constructor() {
     console.log("Demo component constructor called.")
     console.log(this.title)
@@ -23,5 +25,14 @@ export class DemoComponent implements OnChanges {
     console.log("ngOnChanges called")
     console.log(changes)
   }
+
+  ngOnInit() {
+    console.log("ngOnInit called")
+  }
+
+  ngDoCheck() {
+    console.log("ngDoCheck called")
+  }
+
 
 }
